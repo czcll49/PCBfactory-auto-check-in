@@ -515,7 +515,7 @@ def get_user_nickname_from_api(driver, account_index):
                 nickname = data.get('result', {}).get('nickname', '')
                 if nickname:
                     formatted_nickname = format_nickname(nickname)
-                    log(f"账号 {account_index} - 客编: {username} - 👤 昵称: {formatted_nickname}")
+                    log(f"账号 {account_index} - 👤 昵称: {formatted_nickname}")
                     return formatted_nickname
         
         log(f"账号 {account_index} - ⚠ 无法获取用户昵称")
@@ -1275,7 +1275,7 @@ def main():
     all_results = []
     
     for i, (username, password) in enumerate(zip(usernames, passwords), 1):
-        log(f"开始处理第 {i} 个账号")
+        log(f"开始处理客编 {username}")
         result = process_single_account(username, password, i, total_accounts)
         all_results.append(result)
         
