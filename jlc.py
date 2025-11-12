@@ -1309,6 +1309,7 @@ def main():
     for result in all_results:
         account_index = result['account_index']
         nickname = result.get('nickname', '未知')
+        username = result.get('username', '未知')
         retry_count = result.get('retry_count', 0)
         is_final_retry = result.get('is_final_retry', False)
         password_error = result.get('password_error', False)
