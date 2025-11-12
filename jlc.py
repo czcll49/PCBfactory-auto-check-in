@@ -674,6 +674,7 @@ def sign_in_account(username, password, account_index, total_accounts, retry_cou
     result = {
         'account_index': account_index,
         'nickname': '未知',
+        'username': username,
         'oshwhub_status': '未知',
         'oshwhub_success': False,
         'initial_points': 0,      # 签到前积分
@@ -1034,6 +1035,9 @@ def process_single_account(username, password, account_index, total_accounts):
         
         # 更新retry_count为最后一次尝试的
         merged_result['retry_count'] = result['retry_count']
+
+        # 展示客编
+        merged_result['username'] = result['username']
         
         # 检查是否还需要重试（排除密码错误的情况）
         if not should_retry(merged_success, merged_result['password_error']) or attempt >= max_retries:
