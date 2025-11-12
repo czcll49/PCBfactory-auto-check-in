@@ -1309,7 +1309,6 @@ def main():
     for result in all_results:
         account_index = result['account_index']
         nickname = result.get('nickname', '未知')
-        username = result.get('username', '未知')
         retry_count = result.get('retry_count', 0)
         is_final_retry = result.get('is_final_retry', False)
         password_error = result.get('password_error', False)
@@ -1335,7 +1334,7 @@ def main():
             log(f"账号 {account_index} (未知) 详细结果: [密码错误]")
             log("  └── 状态: ❌ 账号或密码错误，跳过此账号")
         else:
-            log(f"账号 {account_index} ({username}) 详细结果:{retry_label}")
+            log(f"账号 {account_index} ({nickname}) 详细结果:{retry_label}")
             log(f"  ├── 开源平台: {result['oshwhub_status']}")
             
             # 显示积分变化
