@@ -1316,8 +1316,6 @@ def main():
         retry_count = result.get('retry_count', 0)
         is_final_retry = result.get('is_final_retry', False)
         password_error = result.get('password_error', False)
-
-        log(f"  ├── result: {result}")
         
         if password_error:
             password_error_accounts.append(account_index)
